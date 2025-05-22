@@ -3,7 +3,7 @@
 #include <climits>
 #include <filesystem>
 #include <linux/limits.h>
-#include <stdemace.h>
+#include <Api1553.h>
 #include <string>
 #include <unistd.h>
 
@@ -39,7 +39,7 @@ static std::string getStatus(S16BIT statusCode) {
                                    // modernize-avoid-c-arrays,
                                    // cppcoreguidelines-avoid-c-arrays)
 
-  aceErrorStr(statusCode, buf, ACE_ERROR_BUFFER_SIZE);
+  ApiGetErrorMessage(statusCode, buf, ACE_ERROR_BUFFER_SIZE);
 
   return buf;
 }
